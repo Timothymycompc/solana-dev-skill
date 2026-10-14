@@ -337,17 +337,17 @@ Full reference: [transactions-v1.md](./transactions-v1.md). Feature gate `txv1aq
 | Anza CLI / Agave | **4.2.0** (mainnet runs 4.2.2) | v1 support and `maxSupportedTransactionVersion: 1`. Local test validator activates every feature at genesis |
 | Surfpool | **1.5** | Enables the gate by default |
 | `solana-*` crates (Rust) | **4.x** (`solana-message` ≥4.2.0, `solana-rpc-client` ≥4.2.1) | `v1::Message` landed in `solana-message` 4.1.0; 4.2.0 adds the inherent `Message::serialize()`. `max_supported_transaction_version: Some(1)` on the RPC client |
-| `@solana/kit` | **8.0.0** (current 8.3.0) | 7.1.1 has the v1 codecs, config setters, and `maxSupportedTransactionVersion: 1`, but 8.0.0 is the first to *type* `createTransactionMessage({ version: 1 })` |
+| `@solana/kit` | **8.0.0** (current 8.5.0) | 7.1.1 has the v1 codecs, config setters, and `maxSupportedTransactionVersion: 1`, but 8.0.0 is the first to *type* `createTransactionMessage({ version: 1 })` |
 | `@solana/kit-plugin-rpc` | **0.19.0** | `solanaRpc({ transactionConfig: { version: 1 } })` plans, estimates, and sends v1. ≤0.18 throws at runtime |
 | `@solana/kit-plugin-litesvm` | **0.19.0** | `litesvm({ transactionConfig: { version: 1 } })`; writes maximum limits instead of estimating |
-| `@solana/kit-plugin-wallet` | **0.20.0** | `connected.supportedTransactionVersions` typed to include `1` (`@solana/wallet-standard-features` 1.5) |
+| `@solana/kit-plugin-wallet` | **0.20.0** (current 0.21.0) | `connected.supportedTransactionVersions` typed to include `1` (`@solana/wallet-standard-features` 1.5). 0.21 peers on `@solana/react ^8.4.0` and `react ^19.3.0` |
 | `@solana/kit-plugin-signer` | 0.19.0 | Pairs with the 0.19 rpc/litesvm plugins |
 | `@solana/react` | 8.x | Kit 8 client bindings |
-| `@solana/web3.js` (v3, `@rc`) | **3.0.0-rc.3** | `compileToV1Message`; send and read |
+| `@solana/web3.js` v3 | **3.0.0** (current 3.0.2) | `compileToV1Message`; send and read. On npm `next` until 2026-10-19, then `latest` |
 | `@solana/web3.js` 1.x | **1.99.0** | ⚠️ Read-only — 1.x never sends v1 |
 | `@anchor-lang/core` | **0.32.2 / 0.31.2** | Read-only, via web3.js 1.99.0. ⚠️ 1.x through 1.2.1 still fetch with `maxSupportedTransactionVersion: 0`; v1 support is [#4977](https://github.com/otter-sec/anchor/pull/4977) (open) |
 | `solders` (Python) | **0.29.0** | Read and send. Earlier releases have neither |
-| `solana-go` | **v2.0.0** | [PR #481](https://github.com/solana-foundation/solana-go/pull/481) |
+| `solana-go` | **v2.0.0** (`/v2` module) or **v1.23.0** (`gagliardetto/solana-go`) | [PR #481](https://github.com/solana-foundation/solana-go/pull/481). Current: v2.1.0 / v1.25.0; Go 1.25+ from v2.1.0 / v1.24.0 |
 | `yellowstone-grpc-proto` (Rust) | **12.6.0** | First release whose generated code has `Message.config` (field 7) |
 | `yellowstone-grpc-client` (Rust) | **13.3.0** | 12.x connects, but pair either with a direct 12.6.0 proto pin |
 | yellowstone-grpc geyser plugin | **15.1.1** | Earlier builds downgrade v1 to v0 before it reaches the wire |
