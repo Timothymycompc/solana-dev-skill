@@ -22,9 +22,10 @@ from a transaction and its simulation before asking for a signature, and when to
 
 ## 1. Resolve every account
 
-v0 and v1 transactions can load accounts from address lookup tables, so the static account keys don't show
-everything the transaction touches. Fetch each table (`getAddressLookupTable` / `fetchAddressLookupTable`) and
-expand the writable and read-only indexes before reviewing. If a table can't be fetched, refuse.
+v0 transactions can load accounts from address lookup tables, so the static account keys don't show everything
+the transaction touches. Fetch each table (`getAddressLookupTable` / `fetchAddressLookupTable`) and expand the
+writable and read-only indexes before reviewing. If a table can't be fetched, refuse. v1 transactions don't
+support lookup tables: every account is in the inline list ([transactions-v1.md](transactions-v1.md)).
 
 Note the required signers (the first `numRequiredSignatures` keys). If the user's wallet is a signer it didn't
 expect to be, or the fee payer isn't who the user thinks, stop.
