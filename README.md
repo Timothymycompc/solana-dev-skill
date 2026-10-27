@@ -76,6 +76,7 @@ skills/solana-dev/
     ├── keychain.md                  # Solana Keychain: server-side signing (KMS, Vault, MPC, managed wallets)
     ├── mosaic.md                    # Mosaic: Token-2022 issuance templates, sRFC-37 allow/block lists
     ├── security.md                  # Security vulnerabilities & prevention
+    ├── pre-sign-review.md           # What to check before an agent signs a transaction
     ├── concepts.md                  # Runtime concepts (rent, PDAs, entrypoint, wire format)
     ├── resources.md                 # Curated reference links
     ├── compatibility-matrix.md      # Version compatibility tables (Anchor/Solana/Rust/GLIBC)
