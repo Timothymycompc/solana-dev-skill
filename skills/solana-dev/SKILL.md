@@ -57,7 +57,7 @@ Use this Skill when the user asks for:
 - Do **not** use `@solana/client` / `@solana/react-hooks` (framework-kit) or `@solana/wallet-adapter-*` for new work.
 
 3) **Legacy compatibility: web3.js v3**
-- web3.js v3 (`@solana/web3.js@3`, 3.0.0 released 2026-10-01) is the classic class-based API rebuilt on Kit internals. Treat it as the migration target for v1 codebases, not a default recommendation for new work. Until npm moves `latest` to 3.x (scheduled for 2026-10-19), a bare `@solana/web3.js` install still resolves to 1.99.0 — pin `@3` explicitly.
+- web3.js v3 (`@solana/web3.js`, 3.0.0 released 2026-10-01) is the classic class-based API rebuilt on Kit internals. Treat it as the migration target for v1 codebases, not a default recommendation for new work. 3.x is now npm `latest`, so a bare `@solana/web3.js` install resolves to it; a codebase that has to stay on 1.x pins `@solana/web3.js@1`.
 - Migrating a v1 codebase: use the official migration skill from the solana-web3.js repo rather than hand-migrating — see [kit-web3-interop.md](references/kit-web3-interop.md) for routing.
 - Do not introduce `@solana/web3-compat` in new work — it is superseded.
 - Do not let legacy class types leak across the entire app; contain them to adapter modules.
